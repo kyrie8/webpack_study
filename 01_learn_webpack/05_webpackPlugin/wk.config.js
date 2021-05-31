@@ -1,7 +1,7 @@
 const path = require('path');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const { DefinePlugin } = require('webpack');
+const { DefinePlugin } = require('webpack'); //webpack内置插件，能声明全局变量
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 module.exports = {
@@ -69,20 +69,20 @@ module.exports = {
     ]
   },
   plugins: [
-    new CleanWebpackPlugin(),
+    new CleanWebpackPlugin(), //清除之前的打包文件
     new HtmlWebpackPlugin({
       title: "webpack",
       template: "./public/index.html"
-    }),
-    new DefinePlugin({
+    }), // 创建index.html文件
+    new DefinePlugin({ //定义全局变量BASE_URLBASE_URL
       BASE_URL: '"./"'
     }),
-    new CopyWebpackPlugin({
+    new CopyWebpackPlugin({ //从public复制文件
       patterns: [
         {
           from: "public",
           globOptions: {
-            ignore: [
+            ignore: [ // 要忽略的文件
               "**/index.html",
               "**/.DS_Store",
               "**/abc.txt"

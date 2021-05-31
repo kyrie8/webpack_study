@@ -59,7 +59,7 @@ module.exports = {
         test: /\.ttf|eot|woff2?$/i,
         type: "asset/resource",
         generator: {
-          filename: "font/[name].[hash:6][ext]"
+          filename: "font/[name].[hash:6][ext]" //将资源打包到Font文件夹下，并保留原来的名字加上6位哈希值
         }
       }
     ]

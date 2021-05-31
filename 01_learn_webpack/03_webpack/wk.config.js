@@ -44,7 +44,7 @@ module.exports = {
         test: /\.(png|jpe?g|gif|svg)$/,
         use: [
           {
-            loader: 'url-loader',
+            loader: 'url-loader', //url-loader内置了file-loader，能将文件转成base64减少服务压力
             options: {
               name: "img/[name].[hash:6].[ext]",
               limit: 100 * 1024  // 限制图片的大小(单位kb)
