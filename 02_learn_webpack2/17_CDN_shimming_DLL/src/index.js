@@ -4,7 +4,7 @@ const button = document.createElement("button");
 button.innerHTML = "加载元素";
 button.addEventListener("click", () => {
   // prefetch -> 魔法注释(magic comments)
-    /* webpackPrefetch: true */
+    /* webpackPrefetch: true */ // 预先加载
     /* webpackPreload: true */
   import(
     /* webpackChunkName: 'element' */

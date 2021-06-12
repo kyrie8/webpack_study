@@ -4,6 +4,6 @@ module.exports = {
     ["@babel/preset-react"],
   ],
   plugins: [
-    ["react-refresh/babel"]
+    ["react-refresh/babel"] //配置React热更新
   ]
 }

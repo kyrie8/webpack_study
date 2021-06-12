@@ -4,7 +4,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
   mode: "development",
-  devtool: "nosources-source-map",
+  devtool: "nosources-source-map", // eval 也可以映射出源文件，但有可能不够清晰
   entry: "./src/index.js",
   output: {
     filename: "js/bundle.js",

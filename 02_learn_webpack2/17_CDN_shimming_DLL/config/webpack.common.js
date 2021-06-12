@@ -12,7 +12,7 @@ const devConfig = require("./webpack.dev");
 
 const commonConfig = (isProduction) => {
   return {
-    entry: {
+    entry: { // 多入口配置
       main: "./src/main.js",
       index: "./src/index.js"
       // main: { import: "./src/main.js", dependOn: "shared" },
@@ -20,6 +20,7 @@ const commonConfig = (isProduction) => {
       // lodash: "lodash",
       // dayjs: "dayjs"
       // shared: ["lodash", "dayjs"]
+      // 入口起点： 对代码进行分离
     },
     output: {
       path: resolveApp("./build"),
@@ -37,15 +38,15 @@ const commonConfig = (isProduction) => {
     optimization: {
       // 对代码进行压缩相关的操作
       minimizer: [
-        new TerserPlugin({
-          extractComments: false,
+        new TerserPlugin({ // 对js文件进行压缩
+          extractComments: false, // 不对注释剥离单独的文件
         }),
       ],
       // natural: 使用自然数(不推荐),
       // named: 使用包所在目录作为name(在开发环境推荐)
       // deterministic: 生成id, 针对相同文件生成的id是不变
       // chunkIds: "deterministic",
-      splitChunks: {
+      splitChunks: {  // 对代码进行分离
         // async异步导入
         // initial同步导入
         // all 异步/同步导入

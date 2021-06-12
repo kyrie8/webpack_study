@@ -5,7 +5,7 @@ const isProduction = true;
 
 module.exports = {
   mode: "production",
-  externals: {
+  externals: { // cnd引进
     // window._
     lodash: "_",
     // window.dayjs
@@ -14,7 +14,7 @@ module.exports = {
   plugins: [
     // 生成环境
     new CleanWebpackPlugin({}),
-    new MiniCssExtractPlugin({
+    new MiniCssExtractPlugin({ // css文件抽取
       filename: "css/[name].[hash:8].css"
     })
   ]
